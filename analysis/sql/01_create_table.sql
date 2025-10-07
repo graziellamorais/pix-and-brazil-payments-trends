@@ -35,6 +35,5 @@ CSV HEADER;*/
 -- Check how many rows were inserted
 SELECT COUNT(*) FROM brazil_payments_data;
 
--- Preview the first 5 rows of the table
-SELECT * FROM brazil_payments_data LIMIT 5;
-
+-- Preview the data
+SELECT * FROM brazil_payments_data;

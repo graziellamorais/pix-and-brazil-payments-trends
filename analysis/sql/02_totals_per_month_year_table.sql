@@ -39,7 +39,7 @@ SELECT * FROM monthly_payment_totals LIMIT 5;
 UPDATE monthly_payment_totals
 SET
     market_share_pix = total_pix / NULLIF(
-        total_pix + total_ted + total_doc + total_check + total_boleto, 0),
+        total_pix + total_ted + total_doc + total_check + total_boleto, 0), -- NULLIF to avoid division by zero, returns NULL if denominator is 0
     market_share_ted = total_ted / NULLIF(
         total_pix + total_ted + total_doc + total_check + total_boleto, 0),
     market_share_doc = total_doc / NULLIF(
@@ -49,4 +49,5 @@ SET
     market_share_boleto = total_boleto / NULLIF(
         total_pix + total_ted + total_doc + total_check + total_boleto, 0);
 
-SELECT * FROM monthly_payment_totals LIMIT 5;
+-- Final preview of the updated table
+SELECT * FROM monthly_payment_totals;
